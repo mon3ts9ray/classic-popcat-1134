@@ -79,5 +79,38 @@
     <div class="cat-img" id="p">0202</div>
 </div>
 
+<script>
+
+    // 1. 計數器初始化
+    let count = 0;
+    // 2. 寫一個function 計數器累加
+    function addCount() {
+        count += 1;
+    }
+    // 用 id 抓取文字的HTML的元素
+    let p = document.getElementById('p');
+    // 顯示計數器的數字
+    p.innerText = count;
+    //註冊耍按下的事件，呼叫計數器累加 function
+    document.addEventListener('mousedown', function() {
+        addCount();
+        p.innerText = count;
+    });
+    // 當滑鼠按下，切換張嘴圖片
+    document.addEventListener('mousedown', function() {
+        p.id = 'op';
+    });
+    // 當滑鼠放開，便恢復原來圖片
+    document.addEventListener('mouseup', function() {
+        p.id = 'p';
+    });
+    // 當滑鼠按下，播放 pops/pop1.mp3
+    document.addEventListener('mousedown', function() {
+        let audio = new Audio('pops/pop1.mp3');
+        audio.play();
+    });
+
+</script>
+
 </body>
 </html>
